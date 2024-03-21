@@ -1,4 +1,4 @@
-import logging
+import atexit
 import threading
 
 
@@ -8,6 +8,7 @@ class BaseThreadWorker:
         self.worker_thread = None
         self.record = None
         self.formatter = formatter
+        atexit.register(self.end)
 
     def output(self):
         raise NotImplementedError('output must be implemented by ThreadWorker subclasses')
@@ -21,6 +22,7 @@ class BaseThreadWorker:
 
     def start(self):
         self.worker_thread = threading.Thread(target=self.worker)
+        self.worker_thread.daemon = True
         self.worker_thread.start()
 
     def end(self):
