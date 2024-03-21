@@ -4,7 +4,7 @@
 
 It is thread-based, which makes it faster than standard file logging.
 
-![](speed_benchmark_figure.png)
+![](https://github.com/minwook-shin/q-logger-py/blob/main/speed_benchmark_figure.png?raw=true)
 
 ## Installation
 

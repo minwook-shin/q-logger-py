@@ -3,11 +3,11 @@ import threading
 
 
 class BaseThreadWorker:
-    def __init__(self, log_queue):
+    def __init__(self, log_queue, formatter):
         self.log_queue = log_queue
         self.worker_thread = None
         self.record = None
-        self.formatter = logging.Formatter('%(levelname)s - %(message)s')
+        self.formatter = formatter
 
     def output(self):
         raise NotImplementedError('output must be implemented by ThreadWorker subclasses')

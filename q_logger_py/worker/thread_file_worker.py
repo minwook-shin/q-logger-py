@@ -1,3 +1,4 @@
+import logging
 import os
 import shutil
 
@@ -5,8 +6,8 @@ from q_logger_py.worker.base_thread_worker import BaseThreadWorker
 
 
 class ThreadRotateFileWorker(BaseThreadWorker):
-    def __init__(self, log_queue, filename, max_bytes=50000, backup_count=5):
-        super().__init__(log_queue)
+    def __init__(self, log_queue, filename, max_bytes=50000, backup_count=5, formatter=logging.Formatter()):
+        super().__init__(log_queue, formatter)
         self.filename = filename
         self.max_bytes = max_bytes
         self.backup_count = backup_count

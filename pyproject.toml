@@ -13,7 +13,7 @@ exclude = ['q_logger_py*tests']
 
 [project]
 name = "q-logger-py"
-version = "0.0.1"
+version = "0.0.2"
 description = "Pure Python 3 logging library that use queues for handling log."
 authors = [
     {name = "minwook-shin", email = "minwook0106@gmail.com"},
